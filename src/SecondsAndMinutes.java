@@ -6,6 +6,9 @@ public class SecondsAndMinutes {
     public static void main(String[] args) {
         System.out.println(getDurationString(61, 0));
         System.out.println(getDurationString(61));
+        System.out.println(getDurationString(65, 9));
+        System.out.println(getDurationString(-41));
+        System.out.println(getDurationString(456));
 
     }
 

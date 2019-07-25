@@ -1,4 +1,8 @@
 public class SecondsAndMinutes {
+
+    private static final String INVALID_VALUE_MESSAGE = "Invalid value";
+    private static final int CONVERSION_VALUE = 60;
+
     public static void main(String[] args) {
         System.out.println(getDurationString(61, 0));
         System.out.println(getDurationString(61));
@@ -6,11 +10,10 @@ public class SecondsAndMinutes {
     }
 
     public static String getDurationString(int minutes, int seconds) {
-        if(!(minutes >= 0)) return "Invalid value";
-        if(!(seconds >= 0 && seconds <= 59)) return "Invalid Value";
+        if  ((minutes < 0) || (seconds < 0) || (seconds > 59)) return INVALID_VALUE_MESSAGE;
 
-        int hours = minutes / 60;
-        int remainingMinutes = minutes % 60;
+        int hours = minutes / CONVERSION_VALUE;
+        int remainingMinutes = minutes % CONVERSION_VALUE;
 
         String stringHours = Integer.toString(hours);
         String stringMinutes = Integer.toString(remainingMinutes);
@@ -28,8 +31,8 @@ public class SecondsAndMinutes {
     public static String getDurationString(int seconds) {
         if(!(seconds >= 0)) return "Invalid value";
 
-        int minutes = seconds / 60;
-        int remainingSeconds = seconds % 60;
+        int minutes = seconds / CONVERSION_VALUE;
+        int remainingSeconds = seconds % CONVERSION_VALUE;
 
         return getDurationString(minutes, remainingSeconds);
     }

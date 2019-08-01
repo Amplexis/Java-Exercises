@@ -11,7 +11,6 @@ public class ReadingUserInput {
             boolean hasNextInt = scanner.hasNextInt();
             if (hasNextInt) {
                 int number = scanner.nextInt();
-
                 sum += number;
                 numberCount += 1;
             } else {
